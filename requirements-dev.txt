@@ -2,7 +2,7 @@
 # requirements.txt / requirements.lock, so the lockfile-drift gate stays green.
 # Runtime deps are installed from requirements.lock (hash-pinned); these sit on
 # top of that in the CI test job.
-ruff==0.16.5
+ruff==0.16.7
 pytest==9.1.1
 pytest-asyncio==1.4.0
 respx==0.23.1

@@ -22,8 +22,12 @@ RUN apt-get update \
 
 WORKDIR /app
 
+# FASTMCP_CHECK_FOR_UPDATES=off: FastMCP 4 asks pypi.org for its latest version
+# on every start (the startup banner's update check). Nothing in the container
+# acts on the answer, so the request is pure outbound noise from a server box.
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
+    PYTHONDONTWRITEBYTECODE=1 \
+    FASTMCP_CHECK_FOR_UPDATES=off
 
 # Install from the hash-pinned lockfile. --require-hashes refuses any package
 # whose hash isn't in the file. Reproducible byte-for-byte.

@@ -20,6 +20,7 @@ import sys
 from collections.abc import Awaitable, Callable
 from typing import Any
 
+import fastmcp
 import httpx
 from dotenv import load_dotenv
 from fastmcp import FastMCP
@@ -419,7 +420,27 @@ async def live_compensation(job_id: int) -> str:
 # Entry point
 # ============================================================
 
-if __name__ == "__main__":
+#: Close a streamable-HTTP session after this long with no request in flight.
+#: A client that disconnects without a DELETE (a killed process, a dropped
+#: laptop lid) otherwise leaves its session and transport in memory forever.
+SESSION_IDLE_TIMEOUT_SECONDS = 1800.0
+_SESSION_IDLE_ENV = "FASTMCP_HTTP_SESSION_IDLE_TIMEOUT"
+
+
+def _apply_session_idle_timeout() -> None:
+    """Reap idle sessions after 30 minutes unless the operator chose otherwise.
+
+    The MCP SDK's session manager defaults to 1800 seconds, but FastMCP 4
+    always passes its own ``http_session_idle_timeout`` setting through, and
+    that setting defaults to None, which means never. Left alone, the server
+    never reaps a session. An explicit FASTMCP_HTTP_SESSION_IDLE_TIMEOUT
+    is already in the setting and is left untouched.
+    """
+    if _SESSION_IDLE_ENV not in os.environ:
+        fastmcp.settings.http_session_idle_timeout = SESSION_IDLE_TIMEOUT_SECONDS
+
+
+def main() -> None:
     # Honor both FASTMCP_* and legacy MCP_* env vars. FastMCP itself reads
     # FASTMCP_HOST / FASTMCP_PORT from the environment when it sets up the
     # streamable-http listener, so we mirror MCP_* into those names too.
@@ -430,4 +451,9 @@ if __name__ == "__main__":
     print(f"Starting MCP Anthropic Tracker on {host}:{port} (Streamable HTTP transport)")
     print(f"DB (read-only): {DB_PATH}")
     print("Live source: https://boards-api.greenhouse.io/v1/boards/anthropic")
+    _apply_session_idle_timeout()
     mcp.run(transport="streamable-http", host=host, port=port)
+
+
+if __name__ == "__main__":
+    main()

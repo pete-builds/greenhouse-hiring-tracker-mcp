@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-30: FastMCP 4.0.10 on MCP SDK 2.2.0, and idle sessions reaped again
+
+Supersedes Dependabot's grouped bump (#52): fastmcp 3.4.7 to 4.0.10 (it proposed 4.0.5), uvicorn 0.52.4 to 0.53.0, ruff 0.16.5 to 0.16.8. The lock is fresh-compiled from its own header with uv 0.12.5, which brings mcp 1.30.0 to 2.2.0.
+
+- **Idle sessions were about to stop being reaped.** FastMCP 4 passes its own `http_session_idle_timeout` setting, default None, to the SDK session manager, overriding the SDK's 1800 second default. Measured on the live session manager: 1800 on the old stack, None after the bump. `main()` now sets 1800 unless `FASTMCP_HTTP_SESSION_IDLE_TIMEOUT` is set. The `if __name__ == "__main__"` block became `main()` so a test can run it.
+- **LAN clients still get through.** `tests/test_lan_host.py` boots `server.py` and requires an MCP `initialize` sent with `Host: 192.168.86.20:3713` to be answered 200. Its control boots the same server bound to loopback with FastMCP's host guard on and requires 421. The same file reads the idle timeout off the live session manager and proves a 1 second override reaps a real session.
+- The image sets `FASTMCP_CHECK_FOR_UPDATES=off`, so the server no longer asks pypi.org for FastMCP's latest version on every start.
+- `pytest.ini` fails on any `FastMCPDeprecationWarning`, the bridge FastMCP 4 keeps for camelCase protocol field reads.
+
+No tool, transport, or port changes. No client re-registration needed.
+
 ## 2026-08-25 — Hold the error contract for failures nobody anticipated
 
 Every tool here documents what it returns on failure, and the three live tools handle the failures they expect. Two kinds got past all of it, from the overnight code review.

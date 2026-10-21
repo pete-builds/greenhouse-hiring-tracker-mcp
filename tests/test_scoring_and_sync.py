@@ -93,9 +93,15 @@ def test_title_gate_caps_off_target_roles():
     assert fit["score"] <= scoring.TITLE_GATE and any("title matches no" in f for f in fit["flags"])
 
 
-def test_region_limited_remote_is_flagged():
-    fit = scoring.score_job(j(location="Remote - Germany"), PROFILE)
-    assert any("region-limited" in f for f in fit["flags"])
+def test_region_limited_remote_outside_the_us_is_blocked():
+    for where in ("Remote - Germany", "London, , United Kingdom", "Berlin Office; Norway; Latvia"):
+        fit = scoring.score_job(j(location=where), PROFILE)
+        assert fit["score"] == 0 and any("region-limited" in b for b in fit["blockers"]), where
+
+
+def test_region_limited_remote_is_fine_without_a_us_preference():
+    fit = scoring.score_job(j(location="Remote - Germany"), {**PROFILE, "location": {"remote": True}})
+    assert fit["score"] > 0 and not fit["blockers"]
 
 
 def test_old_postings_and_reposts_are_flagged():

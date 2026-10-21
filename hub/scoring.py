@@ -148,8 +148,11 @@ def score_job(job: dict, profile: dict) -> dict:
             parts["location"] = 12
             reasons.append("remote")
         else:
-            parts["location"] = 3
-            flags.append(f"remote but region-limited: {where}")
+            # "Remote - Sweden", "London" with remote: true. Remote, but not
+            # from where this profile can work, so it is a no, not a discount.
+            # Seen on the first live sweep: these scored 65 to 72 as a flag.
+            parts["location"] = 0
+            blockers.append(f"remote but region-limited outside the US: {where}")
     elif remote is None:
         if wants_remote and wants_us and status == "non_us":
             parts["location"] = 0

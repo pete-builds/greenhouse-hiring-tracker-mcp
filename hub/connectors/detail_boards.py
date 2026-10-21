@@ -11,7 +11,7 @@ from __future__ import annotations
 import asyncio
 import re
 
-from hub.connectors.base import Connector, annual, make_job
+from hub.connectors.base import HOST_SLUG, Connector, annual, make_job
 from hub.http import BadPayload, Http
 from hub.models import Job
 from hub.text import html_to_text
@@ -94,6 +94,7 @@ class SmartRecruiters(Connector):
 class BambooHR(Connector):
     ats, label, example = "bamboohr", "BambooHR", "linode"
     url_patterns = (re.compile(r"([\w-]+)\.bamboohr\.com"),)
+    slug_pattern = HOST_SLUG
 
     def board_url(self, slug: str) -> str:
         return f"https://{slug}.bamboohr.com/careers"
@@ -185,10 +186,16 @@ class Workday(Connector):
 
     @staticmethod
     def _parts(slug: str) -> tuple[str, str, str]:
-        parts = slug.split("/")
-        if len(parts) != 3:
+        # tenant and wdN both land in the hostname, so each must be a plain label.
+        parts = slug.split("/") if isinstance(slug, str) else []
+        if (len(parts) != 3 or not HOST_SLUG.fullmatch(parts[0])
+                or not re.fullmatch(r"wd\d+", parts[1]) or not re.fullmatch(r"[\w-]+", parts[2])):
             raise ValueError("workday slug must be tenant/wdN/site, e.g. nvidia/wd5/NVIDIAExternalCareerSite")
         return parts[0], parts[1], parts[2]
+
+    def check_slug(self, slug: str) -> str:
+        self._parts(slug)
+        return slug
 
     def board_url(self, slug: str) -> str:
         tenant, wd, site = self._parts(slug)

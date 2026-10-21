@@ -66,6 +66,7 @@ def register(mcp, hub: Hub) -> None:
                     "could not tell which ATS this URL is; pass ats=..., or call discover_company"
                 )
             ats_name, slug = hit
+        connectors.get(ats_name).check_slug(slug)
         company = hub.store.add_company(Company(
             ats=ats_name, slug=slug, name=name or slug.split("/")[0],
             careers_url=board if "://" in board else connectors.get(ats_name).board_url(slug),

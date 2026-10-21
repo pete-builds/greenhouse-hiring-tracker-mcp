@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 
 import httpx
 
-from hub.connectors.base import Connector, annual, make_job
+from hub.connectors.base import HOST_SLUG, Connector, annual, make_job
 from hub.http import BadPayload, Http
 from hub.models import Job
 from hub.text import detect_remote
@@ -199,6 +199,7 @@ class Workable(Connector):
 class Recruitee(Connector):
     ats, label, example = "recruitee", "Recruitee", "bunq"
     url_patterns = (re.compile(r"([\w-]+)\.recruitee\.com"),)
+    slug_pattern = HOST_SLUG
 
     def board_url(self, slug: str) -> str:
         return f"https://{slug}.recruitee.com/"
@@ -230,6 +231,7 @@ class Recruitee(Connector):
 class Teamtailor(Connector):
     ats, label, example = "teamtailor", "Teamtailor", "career"
     url_patterns = (re.compile(r"([\w-]+)\.teamtailor\.com"),)
+    slug_pattern = HOST_SLUG
 
     def board_url(self, slug: str) -> str:
         return f"https://{slug}.teamtailor.com/jobs"
@@ -265,6 +267,7 @@ class Teamtailor(Connector):
 class Breezy(Connector):
     ats, label, example = "breezy", "Breezy HR", "breezy"
     url_patterns = (re.compile(r"([\w-]+)\.breezy\.hr"),)
+    slug_pattern = HOST_SLUG
 
     def board_url(self, slug: str) -> str:
         return f"https://{slug}.breezy.hr/"
@@ -291,6 +294,7 @@ class Breezy(Connector):
 class Personio(Connector):
     ats, label, example = "personio", "Personio", "personio"
     url_patterns = (re.compile(r"([\w-]+)\.jobs\.personio\.(?:de|com)"),)
+    slug_pattern = HOST_SLUG
 
     def board_url(self, slug: str) -> str:
         return f"https://{slug}.jobs.personio.de/"

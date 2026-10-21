@@ -131,6 +131,10 @@ def parse_directory(text: str, ats: str | None = None) -> list[dict]:
             row_ats = named_ats or (hit[0] if hit else "") or (ats or "").lower()
         if not slug or row_ats not in connectors.CONNECTORS:
             continue
+        try:
+            connectors.get(row_ats).check_slug(slug)
+        except ValueError:
+            continue  # a directory from the internet is untrusted input
         tags = [t.strip() for t in pick(row, "tags").replace(";", ",").split(",") if t.strip()]
         rows.append({"ats": row_ats, "slug": slug, "name": pick(row, "name", "company") or slug,
                      "careers_url": url or None, "tags": tags})

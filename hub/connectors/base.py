@@ -16,6 +16,13 @@ from hub.text import detect_remote, html_to_text, parse_salary
 #: turning one sync into 2,000 requests.
 DEFAULT_DETAIL_LIMIT = 150
 
+#: A slug that becomes a path segment after a fixed vendor host.
+PATH_SLUG = re.compile(r"[\w.%-]+")
+#: A slug that becomes part of the hostname ({slug}.recruitee.com) must be one
+#: DNS label: unchecked, "10.0.0.5:8443/x?" would aim the request at any host,
+#: LAN included, and the background sync would repeat it every interval.
+HOST_SLUG = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?")
+
 
 class Connector:
     """One ATS. Subclasses set the class attributes and implement `fetch`.
@@ -33,6 +40,14 @@ class Connector:
     url_patterns: tuple[re.Pattern, ...] = ()
     #: Example slug, shown in tool docs and validation errors.
     example: str = ""
+    #: What a valid slug looks like; HOST_SLUG where the slug lands in the hostname.
+    slug_pattern: re.Pattern = PATH_SLUG
+
+    def check_slug(self, slug: str) -> str:
+        """Return ``slug`` if it can only address this vendor, else raise ValueError."""
+        if not isinstance(slug, str) or not self.slug_pattern.fullmatch(slug):
+            raise ValueError(f"{self.ats} slug {slug!r} is not a board slug, e.g. {self.example}")
+        return slug
 
     def board_url(self, slug: str) -> str:
         raise NotImplementedError
@@ -51,7 +66,7 @@ class Connector:
     async def probe_jobs(self, http: Http, slug: str) -> list[Job] | None:
         """The board's jobs (descriptions where the list call carries them), or None."""
         try:
-            return await self.fetch(http, slug, known={}, detail_limit=0)
+            return await self.fetch(http, self.check_slug(slug), known={}, detail_limit=0)
         except Exception:  # noqa: BLE001 - any failure means "not this ATS"
             return None
 

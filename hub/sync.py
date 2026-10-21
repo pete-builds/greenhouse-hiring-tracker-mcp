@@ -37,7 +37,10 @@ async def sync_company(store: Store, http: Http, company: dict, *, force: bool =
     try:
         connector = connectors.get(company["ats"])
         known = store.known_jobs(company["id"])
-        jobs = await connector.fetch(http, company["slug"], known=known, detail_limit=detail_limit)
+        # Checked here too, not only on the way in: rows imported before the
+        # check existed, or written to the DB by hand, are still synced.
+        slug = connector.check_slug(company["slug"])
+        jobs = await connector.fetch(http, slug, known=known, detail_limit=detail_limit)
     except Exception as exc:  # noqa: BLE001 - one board failing never stops the rest
         error = f"{type(exc).__name__}: {exc}"[:500]
         store.record_sync_failure(company["id"], error)

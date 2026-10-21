@@ -5,6 +5,7 @@ from datetime import timedelta
 import pytest
 
 from hub import discovery, insights, scoring
+from hub.connectors.base import Connector
 from hub.models import Company, Job
 from hub.store import Store, local_today
 from hub.sync import sync_company
@@ -121,7 +122,7 @@ def test_rank_orders_and_drops_blocked():
 # ------------------------------------------------------------------ sync guard
 
 
-class FakeConnector:
+class FakeConnector(Connector):
     ats = "greenhouse"
 
     def __init__(self, count):
@@ -163,7 +164,7 @@ async def test_a_collapsed_board_is_refused_and_force_applies_it(store, monkeypa
 async def test_a_raising_connector_is_recorded_not_raised(store, monkeypatch):
     from hub import connectors
 
-    class Boom:
+    class Boom(Connector):
         async def fetch(self, *a, **k):
             raise RuntimeError("board moved")
 

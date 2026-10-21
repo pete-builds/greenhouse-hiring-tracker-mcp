@@ -1,0 +1,284 @@
+{
+ "offset": 0,
+ "limit": 2,
+ "totalFound": 2,
+ "content": [
+  {
+   "id": "744000156701639",
+   "name": "[XC-AS] ADAS製品 プロジェクトセキュリティマネージャー",
+   "uuid": "f4d8093a-0154-4001-9f87-49af0aca7283",
+   "jobAdId": "20035d7d-a417-4ffe-b646-61f30729adf3",
+   "defaultJobAd": true,
+   "refNumber": "REF136574E",
+   "company": {
+    "identifier": "BoschGroup",
+    "name": "Bosch Group"
+   },
+   "releasedDate": "2026-10-21T01:52:25.364Z",
+   "location": {
+    "city": "Yokohama",
+    "country": "jp",
+    "address": "Tsuzuki Nakagawachuo 1-9-32",
+    "remote": false,
+    "hybrid": true,
+    "fullLocation": "Yokohama, , Japan"
+   },
+   "industry": {
+    "id": "mechanical_engineering",
+    "label": "Mechanical Or Industrial Engineering"
+   },
+   "department": {},
+   "function": {
+    "id": "engineering",
+    "label": "Engineering"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+     "fieldLabel": "Contract type",
+     "valueId": "1e46492b-d24f-460c-b095-38cf08a778d8",
+     "valueLabel": "Unlimited"
+    },
+    {
+     "fieldId": "5abe28e96d8bc56863dd9746",
+     "fieldLabel": "Tariff Area",
+     "valueId": "817c1a47-d176-4a29-ad5e-f5dc47c15cb3",
+     "valueLabel": "Japan Local Grades"
+    },
+    {
+     "fieldId": "586a997ee4b05fd937b86098",
+     "fieldLabel": "Legal Entity(acronym)",
+     "valueId": "4dd2f911-715c-45fe-9d7d-4489aaba1500",
+     "valueLabel": "RBJP"
+    },
+    {
+     "fieldId": "586a99b5e4b0daa006ae1079",
+     "fieldLabel": "Working Location",
+     "valueId": "38335adc-b947-498b-9a21-8192fa8f8fc1",
+     "valueLabel": "Yokohama"
+    },
+    {
+     "fieldId": "5abe295a6d8bc56863dd9747",
+     "fieldLabel": "Global Salary Level",
+     "valueId": "427b1359-5057-4375-a2ae-6c649782296d",
+     "valueLabel": "Experienced/ Middle Tariff"
+    },
+    {
+     "fieldId": "69ca83a2489188782a1e9f87",
+     "fieldLabel": "Direct Or Indirect",
+     "valueId": "1aefbf4c-c10a-422e-a975-a504a7117792",
+     "valueLabel": "Indirect"
+    },
+    {
+     "fieldId": "5abe29f9b60a5e486a2d9b1c",
+     "fieldLabel": "Working hours",
+     "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+     "valueLabel": "Full-time"
+    },
+    {
+     "fieldId": "586a9995e4b0daa006ae1078",
+     "fieldLabel": "Legal Entity",
+     "valueId": "f86cf7ca-c776-468d-99d2-9e35ebb05621",
+     "valueLabel": "Bosch Corporation"
+    },
+    {
+     "fieldId": "691cf1c93001c782b9560ab7",
+     "fieldLabel": "Division full name",
+     "valueId": "da93a2c1-12f5-4efe-83ef-39cf1f18e8b6",
+     "valueLabel": "Cross-Domain Computing Solutions"
+    },
+    {
+     "fieldId": "5abe27936d8bc56863dd9745",
+     "fieldLabel": "Position type",
+     "valueId": "c7b4da31-6f38-405a-b2e8-08a76e3c3f2c",
+     "valueLabel": "Professional"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "jp",
+     "valueLabel": "Japan"
+    },
+    {
+     "fieldId": "586a971ee4b0daa006ae1077",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Bosch Group"
+    },
+    {
+     "fieldId": "586a996ce4b05fd937b86097",
+     "fieldLabel": "Working Country",
+     "valueId": "be87eabd-6091-412e-a855-080c9deb5ef4",
+     "valueLabel": "Japan"
+    },
+    {
+     "fieldId": "586a9b22e4b05fd937b8609a",
+     "fieldLabel": "Local Grade",
+     "valueId": "bc820fed-acf4-403c-b460-bd102b4c1472",
+     "valueLabel": "JP_RBJP_TC4"
+    },
+    {
+     "fieldId": "586a99a5e4b05fd937b86099",
+     "fieldLabel": "Division",
+     "valueId": "CM",
+     "valueLabel": "XC"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000156701639",
+   "language": {
+    "code": "ja",
+    "label": "Japanese",
+    "labelNative": "日本語"
+   }
+  },
+  {
+   "id": "744000156701419",
+   "name": "【MA】Workshop Sales Representative / 自動車整備工場チャンネル営業",
+   "uuid": "59148c73-03c4-4d47-acb5-4a5a87b5dcb5",
+   "jobAdId": "15de2a1e-96d0-4544-ba3a-4122bff53ba3",
+   "defaultJobAd": true,
+   "refNumber": "REF297094B",
+   "company": {
+    "identifier": "BoschGroup",
+    "name": "Bosch Group"
+   },
+   "releasedDate": "2026-10-21T01:48:22.468Z",
+   "location": {
+    "city": "Yokohama-shi",
+    "region": "Kanagawa",
+    "country": "jp",
+    "address": "1-9-32, Nakagawa-chuo, Tsuzuki-ku",
+    "postalCode": "224-8601",
+    "remote": false,
+    "hybrid": true,
+    "hybridDescription": "自宅起点の直行直帰型営業",
+    "fullLocation": "Yokohama-shi, Kanagawa, Japan"
+   },
+   "industry": {
+    "id": "automotive",
+    "label": "Automotive"
+   },
+   "department": {},
+   "function": {
+    "id": "sales",
+    "label": "Sales"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+     "fieldLabel": "Contract type",
+     "valueId": "1e46492b-d24f-460c-b095-38cf08a778d8",
+     "valueLabel": "Unlimited"
+    },
+    {
+     "fieldId": "5abe28e96d8bc56863dd9746",
+     "fieldLabel": "Tariff Area",
+     "valueId": "817c1a47-d176-4a29-ad5e-f5dc47c15cb3",
+     "valueLabel": "Japan Local Grades"
+    },
+    {
+     "fieldId": "586a997ee4b05fd937b86098",
+     "fieldLabel": "Legal Entity(acronym)",
+     "valueId": "4dd2f911-715c-45fe-9d7d-4489aaba1500",
+     "valueLabel": "RBJP"
+    },
+    {
+     "fieldId": "586a99b5e4b0daa006ae1079",
+     "fieldLabel": "Working Location",
+     "valueId": "830a934c-d71c-4c72-a3b2-6e426ca36440",
+     "valueLabel": "Yokohama-Center Kita"
+    },
+    {
+     "fieldId": "5abe295a6d8bc56863dd9747",
+     "fieldLabel": "Global Salary Level",
+     "valueId": "427b1359-5057-4375-a2ae-6c649782296d",
+     "valueLabel": "Experienced/ Middle Tariff"
+    },
+    {
+     "fieldId": "69ca83a2489188782a1e9f87",
+     "fieldLabel": "Direct Or Indirect",
+     "valueId": "1aefbf4c-c10a-422e-a975-a504a7117792",
+     "valueLabel": "Indirect"
+    },
+    {
+     "fieldId": "5abe29f9b60a5e486a2d9b1c",
+     "fieldLabel": "Working hours",
+     "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+     "valueLabel": "Full-time"
+    },
+    {
+     "fieldId": "586a9995e4b0daa006ae1078",
+     "fieldLabel": "Legal Entity",
+     "valueId": "f86cf7ca-c776-468d-99d2-9e35ebb05621",
+     "valueLabel": "Bosch Corporation"
+    },
+    {
+     "fieldId": "691cf1c93001c782b9560ab7",
+     "fieldLabel": "Division full name",
+     "valueId": "b2e47e43-790d-4acb-871a-2ed61d7177ba",
+     "valueLabel": "Mobility Aftermarket"
+    },
+    {
+     "fieldId": "5abe27936d8bc56863dd9745",
+     "fieldLabel": "Position type",
+     "valueId": "c7b4da31-6f38-405a-b2e8-08a76e3c3f2c",
+     "valueLabel": "Professional"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "jp",
+     "valueLabel": "Japan"
+    },
+    {
+     "fieldId": "586a971ee4b0daa006ae1077",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Bosch Group"
+    },
+    {
+     "fieldId": "586a996ce4b05fd937b86097",
+     "fieldLabel": "Working Country",
+     "valueId": "be87eabd-6091-412e-a855-080c9deb5ef4",
+     "valueLabel": "Japan"
+    },
+    {
+     "fieldId": "586a9b22e4b05fd937b8609a",
+     "fieldLabel": "Local Grade",
+     "valueId": "bc820fed-acf4-403c-b460-bd102b4c1472",
+     "valueLabel": "JP_RBJP_TC4"
+    },
+    {
+     "fieldId": "586a99a5e4b05fd937b86099",
+     "fieldLabel": "Division",
+     "valueId": "AA",
+     "valueLabel": "MA"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings/744000156701419",
+   "language": {
+    "code": "ja",
+    "label": "Japanese",
+    "labelNative": "日本語"
+   }
+  }
+ ]
+}

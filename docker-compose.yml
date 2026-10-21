@@ -5,29 +5,43 @@ x-logging: &default-logging
     max-file: "3"
 
 services:
-  anthropic-tracker-mcp:
+  hiring-hub-mcp:
     # Pull the published image by default. To build locally instead, comment
-    # out `image:` and uncomment `build: .`.
-    image: ghcr.io/pete-builds/anthropic-tracker-mcp:0.2.1
+    # out the image line and uncomment `build: .`.
+    image: ghcr.io/pete-builds/greenhouse-hiring-tracker-mcp:1.0.0
     # build: .
-    container_name: anthropic-tracker-mcp
+    container_name: hiring-hub-mcp
     restart: unless-stopped
     ports:
       - "3713:3713"
     environment:
       - FASTMCP_HOST=0.0.0.0
       - FASTMCP_PORT=3713
-      - TRACKER_DB_PATH=/data/tracker.db
+      - HUB_DB_PATH=/hub/hub.db
+      - HUB_SYNC_INTERVAL_HOURS=${HUB_SYNC_INTERVAL_HOURS:-12}
+      - HUB_CONTACT=${HUB_CONTACT:-}
       - TZ=${TZ:-America/New_York}
     volumes:
-      # Read-only mount of the same named volume the tracker writes to.
-      # The `:ro` flag is enforced by Docker. The SQLite driver also opens
-      # the DB with `mode=ro&immutable=1` for defense in depth.
-      - anthropic-tracker-data:/data:ro
+      # The hub's own store: companies, jobs, applications, profile. Writable.
+      - hiring-hub-data:/hub
     logging: *default-logging
-    # Note: if your Docker host's bridge IP pool is exhausted (rare, mostly
-    # a homelab issue), swap `ports:` for `network_mode: host` instead.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    # Upgrading from the Anthropic-only tracker and want its history (department
+    # trends and alerts since it started)? Mount its volume read-only in a
+    # docker-compose.override.yml; the anthropic_* tools appear when it exists:
+    #
+    #   services:
+    #     hiring-hub-mcp:
+    #       environment:
+    #         - TRACKER_DB_PATH=/data/tracker.db
+    #       volumes:
+    #         - anthropic-tracker-data:/data:ro
+    #   volumes:
+    #     anthropic-tracker-data:
+    #       external: true
 
 volumes:
-  anthropic-tracker-data:
-    external: true
+  hiring-hub-data:

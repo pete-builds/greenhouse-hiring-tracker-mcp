@@ -1,0 +1,45 @@
+{
+ "version": "https://jsonfeed.org/version/1.1",
+ "title": "Teamtailor",
+ "home_page_url": "https://career.teamtailor.com/jobs",
+ "feed_url": "https://career.teamtailor.com/jobs.json",
+ "items": [
+  {
+   "id": "4ff07fd5-3ac0-4333-8f4c-955380396321",
+   "title": "UK Account Executive - SMB",
+   "url": "https://career.teamtailor.com/jobs/8118064-uk-account-executive-smb",
+   "date_published": "2026-07-24T09:05:16+02:00",
+   "content_html": "<h4>Let's build the future together!</h4><p><a target=\"_blank\" href=\"https://www.teamtailor.com/en/\">Teamtailor</a> is an Employer Branding and an ATS SaaS platform used by over 13,000 companies, 250.000 users in 90 countries around the world.</p><p>Working at Teamtailor means working at a global, i",
+   "_jobposting": {
+    "@context": "http://schema.org/",
+    "@type": "JobPosting",
+    "title": "UK Account Executive - SMB",
+    "description": "",
+    "identifier": {
+     "@type": "PropertyValue",
+     "name": "Teamtailor",
+     "value": 8118064
+    },
+    "datePosted": "2026-07-24T09:05:16+02:00",
+    "hiringOrganization": {
+     "@type": "Organization",
+     "name": "Teamtailor",
+     "sameAs": "https://career.teamtailor.com"
+    },
+    "jobLocation": [
+     {
+      "@type": "Place",
+      "address": {
+       "@type": "PostalAddress",
+       "streetAddress": "16 Laystall Court",
+       "addressLocality": "London",
+       "postalCode": "EC1R 4",
+       "addressCountry": "GB",
+       "addressRegion": "Europe"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

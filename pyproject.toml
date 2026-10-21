@@ -1,0 +1,30 @@
+[project]
+name = "hiring-hub-mcp"
+version = "1.0.0"
+description = "MCP server: every public ATS job board in one store, ranked against your profile, with an application pipeline."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp==4.1.0",
+    "uvicorn==0.54.0",
+    "python-dotenv==1.2.4",
+    "httpx>=0.28.1,<1",
+    "beautifulsoup4>=4.15.0,<5",
+    "pyyaml>=6.0.2,<7",
+]
+
+[project.scripts]
+# stdio by default, for `claude mcp add hiring-hub -- uvx --from git+... hiring-hub`.
+hiring-hub = "server:cli"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["server"]
+packages = ["hub", "hub.connectors", "hub.tools", "hub.seed", "clients"]
+
+[tool.setuptools.package-data]
+"hub.seed" = ["*.csv"]

@@ -51,13 +51,19 @@ RUN pip install --no-cache-dir --require-hashes -r requirements.lock \
     && rm -f /usr/local/bin/pip /usr/local/bin/pip3 /usr/local/bin/pip3.*
 
 COPY clients/ ./clients/
+COPY hub/ ./hub/
 COPY server.py .
 COPY healthcheck.py .
 
-# Non-root user with pinned UID for predictable bind-mount ownership.
+# Non-root user with pinned UID for predictable bind-mount ownership. /hub is
+# the writable store (a named volume in compose); creating it here owned by
+# the runtime user means a fresh volume inherits that ownership instead of
+# root's, which is the "attempt to write a readonly database" trap.
 RUN useradd --create-home --uid 1000 --shell /bin/bash mcp \
-    && chown -R mcp:mcp /app
+    && mkdir -p /hub \
+    && chown -R mcp:mcp /app /hub
 USER mcp
+VOLUME ["/hub"]
 
 EXPOSE 3713
 

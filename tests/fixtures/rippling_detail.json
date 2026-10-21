@@ -1,0 +1,53 @@
+{
+ "uuid": "ef0b7266-678c-4a23-a439-1a5e7362b604",
+ "name": " Account Executive, Broker Channel (Arkansas) ",
+ "description": {
+  "company": "<div><body><p style='font-family:\"Basel Grotesk\",Arial,sans-serif;font-size:11.25pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;'><b><strong style=\"white-space:pre-wrap;\">About Rippling</strong></b></p><p style='font-family:\"Basel Grotesk\",Arial,sans-serif;font-s",
+  "role": "<div><body><p style='font-family:\"Basel Grotesk\",Arial,sans-serif;font-size:11.25pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;'><b><strong style=\"font-size:10.5pt;white-space:pre-wrap;\">About the role</strong></b></p><p style='font-family:\"Basel Grotesk\",Arial,"
+ },
+ "workLocations": [
+  "AR"
+ ],
+ "department": {
+  "name": "Broker",
+  "base_department": "Sales",
+  "department_tree": [
+   "Sales",
+   "Channel Sales Account Executives",
+   "Broker"
+  ]
+ },
+ "employmentType": {
+  "label": "SALARIED_FT",
+  "id": "Salaried, full-time"
+ },
+ "createdOn": "2026-10-06T16:36:07.947000-07:00",
+ "eeocQuestionnaireEnabled": true,
+ "eeocQuestionnaireEnabledForJobPost": true,
+ "url": "https://ats.rippling.com/rippling/jobs/ef0b7266-678c-4a23-a439-1a5e7362b604",
+ "board": {
+  "boardType": "CUSTOM",
+  "slug": "rippling",
+  "logo": null,
+  "banner": null,
+  "title": "Current Openings",
+  "subtitle": null,
+  "boardURL": "http://www.rippling.com/careers/open-roles",
+  "fontType": null,
+  "linkColor": null,
+  "buttonColor": null,
+  "buttonTextColor": null,
+  "legalNotice": "<meta name=\"rteConfig\" content=\"{&quot;version&quot;:&quot;0.410.0&quot;,&quot;producedBy&quot;:&quot;block&quot;,&quot;themeName&quot;:&quot;berry&quot;}\"><p style=\"font-family:&quot;Basel Grotesk&quot;,Arial,sans-serif;font-size:11pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;text-align:left;\"><a href=\"https://www.rippling.com/immigration-policy\" target=\"_blank\" class=\"css-173makr-linkStyle\" style=\"color:rgb(30,74,169);cursor:pointer;\"><span style=\"white-space:pre-wrap;\">Rippling's Immigration Policy</span></a></p><p style=\"font-family:&quot;Basel Grotesk&quot;,Arial,sans-serif;font-size:11pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;text-align:left;\"><br></p><p style=\"font-family:&quot;Basel Grotesk&quot;,Arial,sans-serif;font-size:11pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;text-align:left;\"><span style=\"white-space:pre-wrap;\">This posting is to fill a vacancy on our team, unless otherwise noted.</span><br><br></p><p style=\"font-family:&quot;Basel Grotesk&quot;,Arial,sans-serif;font-size:11pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;text-align:left;\"><span style=\"font-size:11.25pt;white-space:pre-wrap;\">By clicking \"Apply\" you agree to&nbsp;</span><a href=\"https://app.rippling.com/legal/employee-privacy\" target=\"_blank\" class=\"css-173makr-linkStyle\" style=\"color:rgb(30,74,169);cursor:pointer;\"><span style=\"white-space:pre-wrap;\">Rippling's Employees, Candidates, and Workers Privacy Notice</span></a><span style=\"font-size:11.25pt;white-space:pre-wrap;\">.&nbsp;</span></p><p style=\"font-family:&quot;Basel Grotesk&quot;,Arial,sans-serif;font-size:11pt;font-weight:400;line-height:1.6;letter-spacing:0.25px;margin:4px 0px;padding:0px;\"><br></p>",
+  "noOpeningsMessage": null,
+  "groupJobsByLocation": false,
+  "showBoardLogoOnJobPost": false,
+  "showCompanyInfoUnderJobPost": false,
+  "companyName": "Rippling",
+  "isTest": false
+ },
+ "payRangeDetails": [],
+ "applicationConfirmationTemplate": "6348729c5a9a6e6df0bb6f64",
+ "hasAIEvaluationsEnabled": true,
+ "companyName": "Rippling",
+ "unlistedFromSearch": false
+}

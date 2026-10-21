@@ -1,0 +1,50 @@
+# Example job-search profile for Hiring Hub. Load it with HUB_PROFILE_PATH,
+# or send it as JSON through the set_profile tool. Every key is optional;
+# anything scoring does not use is kept and reported back as a warning.
+
+name: Your Name
+summary: >
+  One or two lines on the job you want, for your own reference and your agent's.
+
+# The strongest signal. A title containing one of these phrases gets full
+# title points; a title matching none of these or title_keywords is capped
+# at 30 whatever else it has going for it.
+target_titles:
+  - Solutions Architect
+  - Developer Advocate
+  - Technical Program Manager
+title_keywords: [ai, platform, developer, cloud]
+
+# Description must mention at least one of these to earn skill points.
+must_have_any: [Python, TypeScript, LLM, Kubernetes]
+# Each of these that appears adds a little.
+nice_to_have: [open source, MCP, observability, mentoring]
+
+# Hard blockers: a title or description containing any of these scores 0.
+avoid_titles: [intern, sales development, account executive]
+avoid_keywords: [security clearance, TS/SCI]
+
+seniority:
+  exclude: [junior, intern]      # blocker
+  prefer: [senior, staff, lead]  # small bonus
+
+location:
+  remote: true                   # remote wanted: an on-site role outside onsite_ok is blocked
+  remote_regions: [US, United States]  # "Remote - Germany" is flagged region-limited
+  onsite_ok: [New York, Brooklyn]      # on-site or hybrid here is fine
+
+salary:
+  floor: 140000    # a posted range whose top is under this is blocked
+  target: 170000   # a top at or over this gets full pay points
+  currency: USD
+
+companies:
+  prefer: [anthropic, cloudflare]   # name or slug; small bonus
+  avoid: []                         # blocker
+
+max_age_days: 45   # postings older than this are flagged as possibly filled
+
+# Drives the pace numbers in pipeline_summary.
+goal:
+  target_date: "2027-03-31"
+  weekly_applications: 5

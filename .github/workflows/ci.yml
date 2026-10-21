@@ -59,19 +59,21 @@ jobs:
           cache: pip
 
       - name: Install
+        # ruff comes from requirements-dev.txt, pinned: an unpinned ruff
+        # picks up new default rules and reds CI with no code change.
         run: |
           pip install --require-hashes -r requirements.lock
-          pip install ruff
+          pip install -r requirements-dev.txt
 
       - name: Lint
         run: ruff check .
 
       - name: Import smoke test
         env:
-          TRACKER_DB_PATH: /tmp/tracker.db
+          HUB_DB_PATH: /tmp/hub/hub.db
+          HUB_SYNC_INTERVAL_HOURS: "0"
         run: |
-          touch /tmp/tracker.db
-          python -c "import server; import clients.tracker; import clients.greenhouse; import clients.parser"
+          python -c "import server; import clients.tracker; import hub.connectors; print(len(server.hub.store.list_companies()), 'seed companies')"
 
   test:
     name: Unit tests
@@ -105,7 +107,7 @@ jobs:
         uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7
         with:
           context: .
-          tags: anthropic-tracker-mcp:ci
+          tags: hiring-hub-mcp:ci
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -123,7 +125,7 @@ jobs:
       - name: Trivy image scan
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25  # v0.36.0
         with:
-          image-ref: anthropic-tracker-mcp:ci
+          image-ref: hiring-hub-mcp:ci
           severity: HIGH,CRITICAL
           exit-code: "1"
           ignore-unfixed: true

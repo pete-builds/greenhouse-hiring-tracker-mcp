@@ -12,3 +12,8 @@ SESSION-RESUME.md
 
 # Per-host compose override (homelab uses host networking; not for public repo)
 docker-compose.override.yml
+
+# Packaging artifacts (uv build / pip install .)
+build/
+dist/
+*.egg-info/

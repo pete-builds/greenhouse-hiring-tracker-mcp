@@ -75,13 +75,15 @@ def _server(tmp_path: Path, **overrides: str) -> Iterator[int]:
     env = {
         k: v
         for k, v in os.environ.items()
-        if not k.startswith(("FASTMCP_", "MCP_", "TRACKER_"))
+        if not k.startswith(("FASTMCP_", "MCP_", "TRACKER_", "HUB_"))
     }
-    # server.py only checks the snapshot exists at startup; it opens it lazily.
-    db = tmp_path / "tracker.db"
-    db.touch()
+    # A throwaway hub: no seed import and no background sync, so booting the
+    # entrypoint never touches the network.
     env.update(
-        TRACKER_DB_PATH=str(db),
+        HUB_DB_PATH=str(tmp_path / "hub.db"),
+        HUB_AUTO_SEED="0",
+        HUB_SYNC_INTERVAL_HOURS="0",
+        TRACKER_DB_PATH=str(tmp_path / "no-legacy.db"),
         FASTMCP_HOST="0.0.0.0",
         FASTMCP_PORT=str(port),
         FASTMCP_CHECK_FOR_UPDATES="off",
@@ -174,9 +176,10 @@ def server_module(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> ModuleType
     # main() writes these two into os.environ; setting them here gets them restored.
     monkeypatch.setenv("FASTMCP_HOST", "0.0.0.0")
     monkeypatch.setenv("FASTMCP_PORT", "3713")
-    db = tmp_path / "tracker.db"
-    db.touch()
-    monkeypatch.setenv("TRACKER_DB_PATH", str(db))
+    monkeypatch.setenv("HUB_DB_PATH", str(tmp_path / "hub.db"))
+    monkeypatch.setenv("HUB_AUTO_SEED", "0")
+    monkeypatch.setenv("HUB_SYNC_INTERVAL_HOURS", "0")
+    monkeypatch.setenv("TRACKER_DB_PATH", str(tmp_path / "no-legacy.db"))
     monkeypatch.syspath_prepend(str(SERVER.parent))
     monkeypatch.setattr(fastmcp.settings, "show_server_banner", False)
     monkeypatch.setattr(fastmcp.settings, "check_for_updates", "off")

@@ -19,3 +19,6 @@ docker-compose.yml
 .dockerignore
 .env
 .env.example
+tests
+docs
+agent

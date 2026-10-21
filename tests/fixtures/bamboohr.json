@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "totalCount": 1
+ },
+ "result": [
+  {
+   "id": "2",
+   "jobOpeningName": "Social Media Manager",
+   "departmentId": "18432",
+   "departmentLabel": "Production",
+   "employmentStatusLabel": "Full-Time",
+   "employmentType": null,
+   "location": {
+    "city": "Conshohocken",
+    "state": "Pennsylvania"
+   },
+   "atsLocation": {
+    "country": null,
+    "state": null,
+    "province": null,
+    "city": null
+   },
+   "isRemote": null,
+   "locationType": "0"
+  }
+ ]
+}

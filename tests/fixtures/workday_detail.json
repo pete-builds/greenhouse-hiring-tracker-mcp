@@ -1,0 +1,34 @@
+{
+ "jobPostingInfo": {
+  "id": "e197b3ffb77f102fc60f579474340000",
+  "title": "Senior HPC Storage Engineer - EDA Infrastructure",
+  "jobDescription": "<p>As a member of the HW Infrastructure Storage Strategy team, you will be the bridge between storage infrastructure and the chip design (e.g. NVIDIA GPUs and CPUs) workloads that depend on it. You will focus on going hands-on to understand how storage behavior impacts EDA (Electronic Design Automation) and HPC workload performance in general — and what to do about it. You’ll evaluate next-generat",
+  "location": "US, CA, Santa Clara",
+  "additionalLocations": [
+   "US, Remote"
+  ],
+  "postedOn": "Posted Today",
+  "startDate": "2026-10-20",
+  "timeType": "Full time",
+  "jobReqId": "JR2014997",
+  "jobPostingId": "Senior-HPC-Storage-Engineer_JR2014997",
+  "jobPostingSiteId": "NVIDIAExternalCareerSite",
+  "country": {
+   "descriptor": "United States of America",
+   "id": "bc33aa3152ec42d4995f4791a106ed09"
+  },
+  "canApply": true,
+  "posted": true,
+  "includeResumeParsing": true,
+  "jobRequisitionLocation": {
+   "descriptor": "US, CA, Santa Clara",
+   "country": {
+    "descriptor": "United States of America",
+    "id": "bc33aa3152ec42d4995f4791a106ed09",
+    "alpha2Code": "US"
+   }
+  },
+  "externalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-HPC-Storage-Engineer_JR2014997",
+  "questionnaireId": "028095df097b1001ac9358c586600000"
+ }
+}

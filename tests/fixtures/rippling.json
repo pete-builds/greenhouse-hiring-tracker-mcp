@@ -1,0 +1,28 @@
+[
+ {
+  "uuid": "ef0b7266-678c-4a23-a439-1a5e7362b604",
+  "name": " Account Executive, Broker Channel (Arkansas) ",
+  "department": {
+   "id": "Sales",
+   "label": "Sales"
+  },
+  "url": "https://ats.rippling.com/rippling/jobs/ef0b7266-678c-4a23-a439-1a5e7362b604",
+  "workLocation": {
+   "label": "AR",
+   "id": "AR"
+  }
+ },
+ {
+  "uuid": "528f45e5-4c17-4fb7-affe-41e0c12c7c15",
+  "name": " Account Executive, Broker Channel (Dallas) ",
+  "department": {
+   "id": "Sales",
+   "label": "Sales"
+  },
+  "url": "https://ats.rippling.com/rippling/jobs/528f45e5-4c17-4fb7-affe-41e0c12c7c15",
+  "workLocation": {
+   "label": "Remote (Dallas, Texas, US)",
+   "id": "Remote (Dallas, Texas, US)"
+  }
+ }
+]

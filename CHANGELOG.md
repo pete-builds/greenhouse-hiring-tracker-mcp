@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.0 (2026-10-21): Hiring Hub, every public ATS board in one store
+
+The Anthropic-only Greenhouse tracker becomes a job-search hub. **Breaking:** the tool surface is new, the server owns a writable store, and the image moves to `ghcr.io/pete-builds/greenhouse-hiring-tracker-mcp`.
+
+- **12 ATS connectors:** Greenhouse, Lever (with the EU host), Ashby, Workable, SmartRecruiters, Recruitee, BambooHR, Rippling, Workday, Teamtailor, Breezy HR, Personio. Field names read off live responses on 2026-10-20; the test fixtures are trimmed copies of those responses.
+- **4 live multi-company boards:** Himalayas, Remote OK, HN Who is Hiring, Remotive (opt-in, cached six hours, per its four-calls-a-day notice).
+- **139 seed companies,** each board confirmed live and its identity checked. Discovery by name with identity confirmation, careers-URL detection for every ATS, and CSV directory import.
+- **Store:** SQLite with WAL and FTS5. Job lifecycle (first seen, last seen, removed, reactivated, repost of), triage, applications with an event history, the profile.
+- **Sync guards:** a failed sync removes nothing; a board collapsing to under a fifth of its last count is refused until `force=true`; incremental bodies on Greenhouse; bounded, concurrent detail calls elsewhere; syncs of more than 15 companies run in the background.
+- **Scoring:** explainable parts, blockers, flags, a title gate. Location rules for hybrid, region-limited remote, and non-US postings, from cases met on real boards while building it.
+- **Pipeline:** `track_application`, `update_application`, `pipeline_summary` with follow-ups due, gone-quiet detection, postings closed under open applications, and goal pace.
+- **stdio:** `uvx --from git+... hiring-hub` runs it with no Docker.
+- **Legacy:** the old snapshot history is served as four `anthropic_*` tools when `TRACKER_DB_PATH` exists. The ten old tools are retired.
+- **Fixed on the way:** the salary evidence window (audit 2026-09-08 #2), the `_escape_like` mismatch on live search (#1, the code is gone), UTC lookbacks against local stamps (#4: every date is local now). CI lint now installs the pinned ruff from `requirements-dev.txt`, and the release workflow checks three version surfaces against the tag.
+
+**Upgrade:** pull the new image, `docker compose up -d`. Add the read-only legacy mount in an override to keep the `anthropic_*` history. Re-register as `hiring-hub`: the tool names changed, so the old registration's tool list is stale.
+
 ## 2026-09-30: FastMCP 4.0.10 on MCP SDK 2.2.0, and idle sessions reaped again
 
 Supersedes Dependabot's grouped bump (#52): fastmcp 3.4.7 to 4.0.10 (it proposed 4.0.5), uvicorn 0.52.4 to 0.53.0, ruff 0.16.5 to 0.16.8. The lock is fresh-compiled from its own header with uv 0.12.5, which brings mcp 1.30.0 to 2.2.0.

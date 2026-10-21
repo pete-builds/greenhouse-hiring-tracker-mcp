@@ -1,0 +1,24 @@
+{
+ "total": 2000,
+ "jobPostings": [
+  {
+   "title": "Senior HPC Storage Engineer - EDA Infrastructure",
+   "externalPath": "/job/US-CA-Santa-Clara/Senior-HPC-Storage-Engineer_JR2014997",
+   "locationsText": "2 Locations",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2014997"
+   ]
+  },
+  {
+   "title": "Power Architect - New College Grad 2027",
+   "externalPath": "/job/US-CA-Santa-Clara/Power-Architect---New-College-Grad-2027_JR2027718",
+   "locationsText": "2 Locations",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2027718"
+   ]
+  }
+ ],
+ "userAuthenticated": false
+}

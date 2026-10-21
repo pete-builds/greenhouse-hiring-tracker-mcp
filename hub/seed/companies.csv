@@ -1,0 +1,140 @@
+name,ats,slug,tags
+1Password,ashby,1password,security
+2U,greenhouse,2u,edtech
+Abnormal AI,greenhouse,abnormalsecurity,security
+Abridge,ashby,abridge,ai-apps
+Adobe,workday,adobe/wd5/external_experienced,saas
+Airbyte,ashby,airbyte,ai-infra
+Airtable,greenhouse,airtable,saas
+Anthropic,greenhouse,anthropic,ai-lab
+Arize AI,greenhouse,arizeai,ai-infra
+Asana,greenhouse,asana,saas
+Automox,greenhouse,automox,security
+Baseten,ashby,baseten,ai-infra
+Beazley Security,rippling,beazleysecurity,security
+Bolt (StackBlitz),lever,boltjobs,ai-apps
+Bosch,smartrecruiters,BoschGroup,enterprise
+Box,greenhouse,boxinc,saas
+Brainly,ashby,brainly,edtech
+Brex,greenhouse,brex,fintech
+Calendly,greenhouse,calendly,saas
+Chainguard,greenhouse,chainguard,security
+Character.AI,ashby,character,ai-apps
+Clay,ashby,claylabs,ai-apps
+Cloudflare,greenhouse,cloudflare,security
+Cognition,ashby,cognition,ai-apps
+Cohere,ashby,cohere,ai-lab
+Collibra,greenhouse,collibra,ai-apps
+Coursera,greenhouse,coursera,edtech
+Cribl,greenhouse,cribl,security
+CrowdStrike,workday,crowdstrike/wd5/crowdstrikecareers,security
+Cursor (Anysphere),ashby,cursor,ai-apps
+Databricks,greenhouse,databricks,ai-infra
+Datadog,greenhouse,datadog,devtools
+Decagon,ashby,decagon,ai-apps
+DeepL,ashby,DeepL,ai-apps
+Discord,greenhouse,discord,consumer
+Drata,ashby,drata,security
+Dropbox,greenhouse,dropbox,saas
+Duolingo,greenhouse,duolingo,edtech
+Elastic,greenhouse,elastic,devtools
+ElevenLabs,ashby,elevenlabs,ai-apps
+Everlaw,greenhouse,everlaw,legal-tech
+Factory,ashby,factory,ai-apps
+Fathom,ashby,fathom,ai-apps
+Figma,greenhouse,figma,saas
+Fin (formerly Intercom),greenhouse,intercom,ai-apps
+Fireworks AI,ashby,fireworks,ai-infra
+Fivetran,greenhouse,fivetran,ai-infra
+Forbes,greenhouse,forbes,media
+GC AI,ashby,gc-ai,legal-tech
+GitLab,greenhouse,gitlab,devtools
+Glean,greenhouse,gleanwork,ai-apps
+Gong,greenhouse,gongio,ai-apps
+Grafana Labs,greenhouse,grafanalabs,devtools
+Guild,greenhouse,guild,edtech
+Gusto,greenhouse,gusto,saas
+Handshake,ashby,handshake,edtech
+Harvey,ashby,harvey,ai-apps
+Hex,ashby,hex,ai-apps
+HiddenLayer,greenhouse,hiddenlayer,ai-governance
+HubSpot,greenhouse,hubspotjobs,saas
+Hugging Face,workable,huggingface,ai-lab
+Huntress,greenhouse,huntress,security
+Imbue,greenhouse,imbue,ai-lab
+Inflection AI,greenhouse,inflectionai,ai-lab
+Instructure,ashby,instructure,edtech
+Ironclad,ashby,ironcladhq,legal-tech
+Jamf,greenhouse,jamf,security
+Jasper,workable,jasper,ai-apps
+Khan Academy,greenhouse,khanacademy,edtech
+Kong,ashby,kong,devtools
+Labelbox,greenhouse,labelbox,ai-infra
+LangChain,ashby,langchain,ai-infra
+Lattice,greenhouse,lattice,saas
+Linear,ashby,linear,saas
+Lovable,ashby,lovable,ai-apps
+Mercury,greenhouse,mercury,fintech
+Midjourney,ashby,midjourney,ai-lab
+Miro,greenhouse,realtimeboardglobal,saas
+Modal,ashby,modal,ai-infra
+MongoDB,greenhouse,mongodb,devtools
+n8n,ashby,n8n,automation
+Netskope,greenhouse,netskope,security
+Notion,ashby,notion,saas
+NVIDIA,workday,nvidia/wd5/NVIDIAExternalCareerSite,ai-infra
+Okta,greenhouse,okta,security
+OneStream,greenhouse,onestream,fintech
+OneTrust,greenhouse,onetrust,security
+OpenAI,ashby,openai,ai-lab
+Otter.ai,greenhouse,otterai,ai-apps
+Perplexity,ashby,perplexity,ai-lab
+Pinecone,ashby,pinecone,ai-infra
+Pinterest,greenhouse,pinterest,consumer
+Plaid,ashby,plaid,fintech
+Poolside,ashby,poolside,ai-lab
+PostHog,ashby,posthog,devtools
+Ramp,ashby,ramp,fintech
+Reddit,greenhouse,reddit,consumer
+Reka,ashby,reka,ai-lab
+RELX (LexisNexis),workday,relx/wd3/relx,legal-tech
+Replicant,ashby,Replicant,ai-apps
+Replit,ashby,replit,ai-apps
+Ridgeline,greenhouse,ridgeline,fintech
+Rippling,rippling,rippling,saas
+Runway,ashby,runway,ai-apps
+Salesforce,workday,salesforce/wd12/External_Career_Site,saas
+Scale AI,greenhouse,scaleai,ai-infra
+Semgrep,ashby,semgrep,security
+SentinelOne,greenhouse,sentinellabs,security
+ServiceNow,smartrecruiters,ServiceNow,saas
+Sierra,ashby,sierra,ai-apps
+Sigma Computing,greenhouse,sigmacomputing,ai-apps
+Snorkel AI,greenhouse,snorkelai,ai-infra
+Snowflake,ashby,snowflake,ai-infra
+Snyk,ashby,snyk,security
+Socket,ashby,socket,security
+Sourcegraph,greenhouse,sourcegraph91,devtools
+SpaceX and xAI,greenhouse,xai,ai-lab
+Speak,ashby,speak,edtech
+Stability AI,greenhouse,stabilityai,ai-lab
+Stripe,greenhouse,stripe,fintech
+Supabase,ashby,supabase,devtools
+Synthesia,ashby,synthesia,ai-apps
+Tailscale,greenhouse,tailscale,security
+Tanium,greenhouse,tanium,security
+Thomson Reuters,workday,thomsonreuters/wd5/External_Career_Site,legal-tech
+Together AI,greenhouse,togetherai,ai-infra
+Twilio,greenhouse,twilio,saas
+Typeface,greenhouse,typeface,ai-apps
+Udemy,greenhouse,udemy,edtech
+Vanta,ashby,vanta,security
+Vercel,greenhouse,vercel,devtools
+Webflow,ashby,webflow,saas
+Wiz,greenhouse,wizinc,security
+Workato,greenhouse,workato,automation
+Workday,workday,workday/wd5/Workday,saas
+Writer,ashby,writer,ai-apps
+Zapier,ashby,zapier,automation
+Zillow,workday,zillow/wd5/Zillow_Group_External,consumer
+Zscaler,greenhouse,zscaler,security

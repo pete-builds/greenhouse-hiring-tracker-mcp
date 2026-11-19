@@ -113,19 +113,22 @@ jobs:
           cache-to: type=gha,mode=max
           provenance: false
 
-      - name: Assert the runtime image ships no pip
-        # pip is purged after install so Trivy stops flagging its vendored copies
-        # (see the Dockerfile). The purge once named python3.14 paths literally, so a
-        # base image on any other Python minor deleted nothing and pip shipped with
-        # every check green. This runs against the BUILT image, not the source.
+      - name: Assert the runtime image ships no pip and no ensurepip
+        # The Dockerfile uninstalls pip, then deletes ensurepip (which carries a bundled
+        # pip wheel and can reinstall pip) so Trivy stops flagging pip's vendored
+        # copies. `pip uninstall` works on any Python, but the ensurepip delete once
+        # named python3.14 paths literally, so on any other minor it removed nothing
+        # and every check stayed green. This runs against the BUILT image.
         run: |
           docker run --rm --entrypoint python hiring-hub-mcp:ci -c '
           import importlib.util, sys
-          assert importlib.util.find_spec("pip") is None, (
-              f"pip is importable in the runtime image (Python {sys.version.split()[0]}): "
-              f"the purge in the Dockerfile removed nothing. Check its paths."
-          )
-          print(f"pip absent from the runtime image (Python {sys.version.split()[0]})")
+          v = sys.version.split()[0]
+          for mod in ("pip", "ensurepip"):
+              assert importlib.util.find_spec(mod) is None, (
+                  f"{mod} is importable in the runtime image (Python {v}): the purge "
+                  f"in the Dockerfile missed it. Check its paths match the image Python."
+              )
+          print(f"pip and ensurepip absent from the runtime image (Python {v})")
           '
 
       - name: Trivy filesystem scan

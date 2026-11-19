@@ -45,9 +45,9 @@ COPY requirements.lock .
 # deleting pip is the fix rather than a version bump.
 RUN pip install --no-cache-dir --require-hashes -r requirements.lock \
     && pip uninstall -y pip \
-    && rm -rf /usr/local/lib/python3.14/site-packages/pip \
-       /usr/local/lib/python3.14/site-packages/pip-*.dist-info \
-       /usr/local/lib/python3.14/ensurepip \
+    && rm -rf /usr/local/lib/python3.13/site-packages/pip \
+       /usr/local/lib/python3.13/site-packages/pip-*.dist-info \
+       /usr/local/lib/python3.13/ensurepip \
     && rm -f /usr/local/bin/pip /usr/local/bin/pip3 /usr/local/bin/pip3.*
 
 COPY clients/ ./clients/
